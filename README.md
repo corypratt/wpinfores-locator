@@ -1,0 +1,2 @@
+wpinfores-locator
+=================
