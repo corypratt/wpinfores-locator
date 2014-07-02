@@ -9,12 +9,24 @@
 		
 			<!-- main content -->
 			<div id="post-body-content">
-				
 				<div class="meta-box-sortables ui-sortable">
 					
 					<div class="postbox">
 					
-						<h3><span>Main Content Header</span></h3>
+						<h3><span>How To Use This Plugin</span></h3>
+						<div class="inside">
+							<p>Using this plugin is simple right now.  Enter your the Client ID and Product ID provided by IRI.</p>
+							<p>A locator can be put onto any page using a shortcode and various options to control the search parameters.</p>
+						</div> <!-- .inside -->
+					
+					</div> <!-- .postbox -->
+					
+				</div> <!-- .meta-box-sortables .ui-sortable -->
+				<div class="meta-box-sortables ui-sortable">
+					
+					<div class="postbox">
+					
+						<h3><span>Enter Your Infores Client ID and Product Family ID</span></h3>
 						<div class="inside">
 							<form name="wpinfores_settings_form" method="post" action="">
 
@@ -28,6 +40,7 @@
 										<td>
 											<input name="wpinfores_clientid" id="wpinfores_clientid" type="text" value="<?php echo $wpinfores_clientid; ?>" class="regular-text" />
 										</td>
+
 									</tr>
 									<tr>
 										<td>
@@ -38,7 +51,8 @@
 										</td>
 									</tr>
 								</table>
-								<p><input class="button-primary" type="submit" name="wpinfores_submit" value="Save" /></p>
+								<?php if ($options != '' ) { $submitbuttonValue = 'Update'; } else { $submitbuttonValue = 'Save'; }?>
+								<p><input class="button-primary" type="submit" name="wpinfores_submit" value="<?php echo $submitbuttonValue; ?>" /></p>
 							</form>
 						</div> <!-- .inside -->
 					
@@ -46,6 +60,7 @@
 					
 				</div> <!-- .meta-box-sortables .ui-sortable -->
 				
+
 			</div> <!-- post-body-content -->
 			
 			<!-- sidebar -->
@@ -55,9 +70,9 @@
 					
 					<div class="postbox">
 					
-						<h3><span>Sidebar Content Header</span></h3>
+						<h3><span>About the plugin</span></h3>
 						<div class="inside">
-							Content space
+							This plugin is design to ease the integration of Infores product locator into your site.
 						</div> <!-- .inside -->
 						
 					</div> <!-- .postbox -->
