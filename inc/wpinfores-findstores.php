@@ -1,6 +1,7 @@
 <?php
 /*
  *	This page is used to find stores and is called by a jquery script when the submit button is pressed.
+ *	We have to do this through PHP because CORS is not supported.
 */
 
 require_once( '../../../../wp-blog-header.php' );

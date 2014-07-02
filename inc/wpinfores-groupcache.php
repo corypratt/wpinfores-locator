@@ -2,6 +2,7 @@
 
 /*
  *	This page is used to cache and return the product groups when the page is loaded.
+ *	We have to do this through PHP because CORS is not supported.
  *	It should stay up-to-date should your make changes in the rel.csv file with IRI
 */
 
