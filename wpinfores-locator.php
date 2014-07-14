@@ -122,34 +122,30 @@ function wpinfores_locator_checkresults( $wpinfores_clientid, $wpinfores_product
 */
 function wpinfores_show_locator( $atts ){
 	extract( $atts );
+
 /*
  *	Code for the form
 */
-	$form_display = '';
-	$form_display  = '<div id="inforessearchForm" name="">';
-	$form_display .= '<label for="zip">Enter Your Zip Code</label><input id="zip" autocomplete="off" name="zipline" type="text" placeholder="Enter your Zipcode" />';
-	$form_display .= '<label for="searchRadius">How far do you want to search?</label>
-					  <select id="searchRadius"><option value="5">5 Miles</option>
+	//$form_display = ob_get_clean();
+	$form_display .= '<div id="inforessearchForm">';
+	$form_display .= '<div class="error" style="display:none;"></div>';
+	$form_display .= '<div class="form-group"><label for="zip">Enter Your Zip Code</label><input id="zip" autocomplete="off" name="zipline" type="text" placeholder="Enter your Zipcode" /></div>';
+	$form_display .= '<div class="form-group"><label for="searchRadius">Find Stores Within:</label>
+					  <select id="searchRadius">
 					  <option value="10">10 Miles</option>
 					  <option value="15">15 Miles</option>
 					  <option value="20">20 Miles</option>
 					  <option value="50">50 Miles</option>
-					  </select>';
-	$form_display .= '<label for="productList">Which brand would you like to find?</label>
-					  <select id="productList"><option>Loading List</option></select>';
-	$form_display .= '<button type="submit" value="Search" onClick="brandLocator()">Button</button>';
-	$form_display .= '</div>';				  
+					  </select></div>';
+	$form_display .= '<div class="form-group"><label for="productList">Please Choose A Brand</label>
+					  <select id="productList"><option>Loading List</option></select></div>';
+	$form_display .= '<button type="submit" value="Search" onClick="brandLocator()">Search</button>';
+	$form_display .= '</div>';
+	$form_display .= '<div class="inforsearch-loader" style="display:none;">Loading...</div>';
+	$form_display .= '<ul class="shop-results" style="display: block;"></ul>';
 
-	echo $form_display;
 
-	/*
-	 *	Setup the results section.
-	*/
-	?>
-		<ul class="shop-results" style="display: block;">
-			<div class="loader" style="display:none;">Loading...</div>
-		</ul>
-	<?php
+	return $form_display;
 }
 add_shortcode('infores', 'wpinfores_show_locator');
 
@@ -159,7 +155,7 @@ add_shortcode('infores', 'wpinfores_show_locator');
 */
 function enqueue_scripts() {
 	wp_enqueue_style( 'wpinfores-style', plugins_url( '/inc/wpinfores-style.css' , __FILE__ ) );
-	wp_enqueue_script( 'wpinfores_js', plugins_url( '/js/wpinfores-locator.js' , __FILE__ ), array( 'jquery' ), true );
+	wp_enqueue_script( 'wpinfores_js', plugins_url( '/js/wpinfores-locator.js' , __FILE__ ), false, false, true );
 	
 	/*
 	 *	Sending plugin options to our scripts.

@@ -1,4 +1,72 @@
-.shop-results > .loader {
+#inforessearchForm {
+	margin-bottom: 25px;
+}
+
+#inforessearchForm .error {
+	padding:5px 20px;
+	background-color:#ac0101;
+	color:white;
+}
+
+#inforessearchForm .form-group {
+	margin-bottom: 15px;
+	float:left;
+	width: 32%;
+}
+
+#inforessearchForm label {
+	display: inline-block;
+	max-width: 100%;
+	font-weight: bold;
+}
+
+#inforessearchForm input {
+	display: block;
+	height: 27px;
+	padding: 0px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+#inforessearchForm select {
+	margin-top: 5px;
+	margin-bottom: 3px;
+	font-size: 16px;
+}
+
+#inforessearchForm button {
+	background-color: #ac0101;
+	color:white;
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.inforsearch-loader {
   margin: 6em auto;
   font-size: 10px;
   position: relative;
@@ -10,8 +78,8 @@
   -webkit-animation: load8 1.1s infinite linear;
   animation: load8 1.1s infinite linear;
 }
-.shop-results > .loader,
-.shop-results > .loader:after {
+.inforsearch-loader,
+.inforsearch-loader:after {
   border-radius: 50%;
   width: 10em;
   height: 10em;
@@ -36,3 +104,26 @@
     transform: rotate(360deg);
   }
 }
+
+.shop-results {
+	height: 600px;
+	overflow-y: scroll;
+}
+
+.shop-results li {
+	background: #fafafa!important;
+	display: block;
+	float: left;
+	width: 45%;
+	margin-bottom: 20px;
+	margin-right: 20px!important;
+	margin-left: 0!important;
+	/* padding: 10px!important; */
+	padding-top: 0px 10px 10px;
+}
+
+.shop-results li #name h4 {
+	padding:0px 0px 10px 0px;
+}
+
+
